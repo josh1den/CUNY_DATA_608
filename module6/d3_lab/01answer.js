@@ -1,6 +1,5 @@
 d3.csv('ue_industry.csv', data => {
 
-    // Define your scales and generator here.
     const xScale = d3.scaleLinear()
         .domain(d3.extent(data, d => +d.index))
         .range([20, 1180]);
@@ -13,7 +12,7 @@ d3.csv('ue_industry.csv', data => {
         .x(d => xScalea(d.index))
         .y(d => yScalea(+d.Agriculture));
 
-    d3.select('#part3')
+    d3.select('#answer1')
         .append('path')
         .attr('d', linea(data))
         .attr('stroke', '#2e2928')
